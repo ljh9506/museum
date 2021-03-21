@@ -1,5 +1,12 @@
+import HeaderContainer from './containers/Header';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 function App() {
-  return <h1>Hello</h1>;
+  return (
+    <Router>
+      <HeaderContainer />
+    </Router>
+  );
 }
 
 export default App;
