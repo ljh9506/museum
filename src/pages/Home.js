@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
+import HeroSection from '../components/HeroSection';
 import Sidebar from '../components/Sidebar';
 
-const HeaderContainer = () => {
-  const [isOpen, setIsOpen] = useState(true);
+const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -13,8 +14,9 @@ const HeaderContainer = () => {
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Header toggle={toggle} />
+      <HeroSection />
     </>
   );
 };
 
-export default HeaderContainer;
+export default Home;
