@@ -9,7 +9,7 @@ export const homeObjOne = {
   buttonLabel: 'Go',
   imgStart: false,
   img:
-    'https://lh3.googleusercontent.com/NrCcfeY0r2F3M2hIQe5SLDRofR2tVzeOH18VjflOYGj88v4clb4v2H_VgCZR4nJhYsxxH9ATzfkL2tRqOWEK5-gPVEE=s0',
+    'https://lh3.googleusercontent.com/mZj-trnVh6jeUDsl1o0a3xNXPat_UOZtKecS4LaZdTLcNoIqtd_yf6beJKCUVzk3NT5SSFeQ-hOzJEOOSV9sg8dHE6VjFjUrGfxwe5Sg=s0',
   alt: 'Car',
   dark: true,
   primary: true,
@@ -33,4 +33,5 @@ export const homeObjTwo = {
   dark: true,
   primary: true,
   darkText: false,
+  marginClear: true,
 };

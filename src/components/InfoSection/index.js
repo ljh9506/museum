@@ -26,10 +26,11 @@ const InfoSection = ({
   buttonLabel,
   img,
   alt,
+  marginClear,
 }) => {
   return (
     <InfoContainer lightBg={lightBg}>
-      <InfoWrapper>
+      <InfoWrapper marginClear={marginClear}>
         <InfoRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
@@ -37,7 +38,7 @@ const InfoSection = ({
               <Heading lightText={lightText}>{headline}</Heading>
               <SubTitle darkText={darkText}>{description}</SubTitle>
               <BtnWrap>
-                <InfoButton to='home'>{buttonLabel}</InfoButton>
+                <InfoButton to='/studio'>{buttonLabel}</InfoButton>
               </BtnWrap>
             </TextWrapper>
           </Column1>

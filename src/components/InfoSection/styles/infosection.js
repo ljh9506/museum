@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
 
 export const InfoContainer = styled.div`
   color: #fff;
@@ -8,21 +9,23 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  height: 100%;
   width: 100%;
+  align-items: center;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 24px;
+  padding: 120px 24px;
   justify-content: center;
+  padding: ${({ marginClear }) => (marginClear ? '0 24px' : '')};
 `;
 
 export const InfoRow = styled.div`
   display: grid;
+  align-items: center;
   grid-auto-columns: minmax(auto, 1fr);
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
-
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1' 'col2'`};
@@ -33,7 +36,6 @@ export const Column1 = styled.div`
   margin-top: 20px;
   padding: 0 15px;
   grid-area: col1;
-  margin-top: 50px;
 `;
 export const Column2 = styled.div`
   margin-top: 20px;
@@ -58,6 +60,7 @@ export const TopLine = styled.p`
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  margin-top: 16px;
 `;
 
 export const Heading = styled.h1`
@@ -109,6 +112,6 @@ export const Img = styled.img`
   width: 100%;
   margin: 0 0 10px 0;
   padding-right: 0;
-  max-height: 500px;
+  max-height: 600px;
   object-fit: cover;
 `;
