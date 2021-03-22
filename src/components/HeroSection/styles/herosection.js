@@ -7,7 +7,7 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 800px;
+  height: 640px;
   z-index: 1;
 `;
 
@@ -47,12 +47,28 @@ export const HeroH1 = styled.h1`
   color: #fff;
   font-size: 48px;
   text-align: center;
+  text-transform: uppercase;
 
   @media screen and (max-width: 768px) {
     font-size: 48px;
   }
   @media screen and (max-width: 480px) {
     font-size: 32px;
+  }
+`;
+
+export const HeroSpan = styled.span`
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  display: block;
+  margin-bottom: 12px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 36px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 28px;
   }
 `;
 
@@ -104,4 +120,38 @@ export const ArrowForward = styled(MdArrowForward)`
 export const ArrowRight = styled(MdKeyboardArrowRight)`
   margin-left: 8px;
   font-size: 24px;
+`;
+
+export const HeroLogos = styled.div`
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+export const HeroLogosSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const HeroLogosA = styled.a`
+  font-size: 10px;
+  font-weight: bolder;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 8px;
+`;
+export const HeroLogosImg = styled.img`
+  height: 25px;
+  margin-right: 22px;
+  cursor: pointer;
+`;
+export const HeroMainLogosImg = styled.img`
+  height: 50px;
+  margin-right: 22px;
+  color: white;
+  cursor: pointer;
 `;

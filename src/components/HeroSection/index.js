@@ -10,6 +10,12 @@ import {
   HeroH1,
   HeroImg,
   HeroP,
+  HeroSpan,
+  HeroLogos,
+  HeroLogosSection,
+  HeroLogosA,
+  HeroLogosImg,
+  HeroMainLogosImg,
 } from './styles/herosection';
 
 const HeroSection = () => {
@@ -21,10 +27,32 @@ const HeroSection = () => {
     <HeroContainer>
       <HeroBg>
         <HeroImg src='https://lh3.googleusercontent.com/J-mxAE7CPu-DXIOx4QKBtb0GC4ud37da1QK7CzbTIDswmvZHXhLm4Tv2-1H3iBXJWAW_bHm7dMl3j5wv_XiWAg55VOM=s0' />
+        <HeroLogos>
+          <HeroLogosSection>
+            <HeroMainLogosImg src={require('../../images/logo1.svg').default} />
+          </HeroLogosSection>
+          <HeroLogosSection>
+            <HeroLogosA>Founder</HeroLogosA>
+            <HeroLogosImg src={require('../../images/philips.svg').default} />
+          </HeroLogosSection>
+          <HeroLogosSection>
+            <HeroLogosA>Main Sponsor</HeroLogosA>
+            <HeroLogosImg src={require('../../images/bgl.svg').default} />
+          </HeroLogosSection>
+          <HeroLogosSection>
+            <HeroLogosImg src={require('../../images/ing.svg').default} />
+          </HeroLogosSection>
+          <HeroLogosSection>
+            <HeroLogosImg src={require('../../images/kpn.svg').default} />
+          </HeroLogosSection>
+        </HeroLogos>
       </HeroBg>
       <HeroContent>
-        <HeroH1>mflasmflamf fmlqmflqwfml</HeroH1>
-        <HeroP>fpeogwjpoegjw pojqegpj qgjpoqjpoge</HeroP>
+        <HeroH1>rijks museum</HeroH1>
+
+        <HeroP>
+          <HeroSpan>FROM HOME</HeroSpan> We bring the museum to You
+        </HeroP>
         <HeroBtnWrapper>
           <HeroBtn onMouseEnter={onHover} onMouseLeave={onHover}>
             See Arts {hover ? <ArrowForward /> : <ArrowRight />}
