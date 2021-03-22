@@ -6,5 +6,6 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
         font-family: 'Encode Sans Expanded', sans-serif;
-    }
+    };
+    
 `;

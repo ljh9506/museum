@@ -86,16 +86,18 @@ export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
 `;
-export const InfoButton = styled.button`
+export const InfoButton = styled(Link)`
+  display: block;
   outline: none;
   border: none;
-  padding: 18px 32px;
+  padding: 18px 64px;
   background-color: hsla(0, 0%, 100%, 0.2);
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
   transition: 0.2s ease-in-out;
+  text-decoration: none;
 
   &:hover {
     background-color: #fff;
