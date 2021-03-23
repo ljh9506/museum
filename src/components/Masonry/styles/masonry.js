@@ -4,12 +4,15 @@ import { PulseLoader } from 'react-spinners';
 export const Columns = styled.div`
   column-width: 350px;
   column-gap: 15px;
+  position: relative;
   background-color: #000;
   margin-top: 240px;
+  padding: 0 30px;
   min-height: 402px;
 
   @media screen and (max-width: 480px) {
-    min-height: 200px;
+    min-height: 500px;
+    padding: 0;
   }
 `;
 
@@ -33,8 +36,20 @@ export const Figcaption = styled.figcaption`
   margin-top: 11px;
   color: #fff;
 `;
-export const FigureP = styled.p`
+export const FigureH2 = styled.h2`
   color: #fff;
+  font-size: 18px;
+`;
+export const FigureP = styled.p`
+  color: #909090;
+  margin: 4px 0;
+  font-size: 14px;
+`;
+export const FigurePlace = styled.span`
+  font-size: 12px;
+  background-color: #aaa04d;
+  padding: 2px;
+  border-radius: 4px;
 `;
 export const FigureWrap = styled.div`
   display: flex;
@@ -42,13 +57,18 @@ export const FigureWrap = styled.div`
 `;
 
 export const LoaderWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  min-height: 1000px;
-  width: 100%;
 
+  @media screen and (max-width: 700px) {
+    min-height: 500px;
+  }
   @media screen and (max-width: 480px) {
     min-height: 490px;
   }

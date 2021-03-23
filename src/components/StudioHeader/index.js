@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import {
   HeaderContainer,
   HeaderImg,
@@ -14,10 +15,7 @@ import {
   SearchFormWrap,
 } from './styles/studioHeader';
 
-const StudioHeader = () => {
-  const searchHandler = (e) => {
-    e.preventDefault();
-  };
+const StudioHeader = ({ children, searchChange, searchHandler, query }) => {
   return (
     <>
       <HeaderContainer>
@@ -29,7 +27,7 @@ const StudioHeader = () => {
           <SearchWrap>
             <SearchForm onSubmit={searchHandler}>
               <SearchFormWrap>
-                <SearchInput />
+                <SearchInput value={query} onChange={searchChange} />
                 <SearchButtonWrap>
                   <SearchButton type='submit'>
                     <Icon />
@@ -41,6 +39,7 @@ const StudioHeader = () => {
           </SearchWrap>
         </SearchSection>
       </HeaderContainer>
+      {children}
     </>
   );
 };

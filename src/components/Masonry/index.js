@@ -1,18 +1,21 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import useFetchData from '../../hooks/fetchData';
 import {
   Columns,
   Figcaption,
   Figure,
+  FigureH2,
   FigureImg,
   FigureP,
   FigureWrap,
   Loader,
   LoaderWrapper,
+  FigurePlace,
 } from './styles/masonry';
 
-const Masonry = () => {
+const Masonry = ({ searchDatas, isLoading }) => {
   const [datas, setDatas] = useState(null);
   useEffect(() => {
     (async () => {
@@ -23,7 +26,13 @@ const Masonry = () => {
       setDatas(data.artObjects);
     })();
   }, []);
-  if (datas === null)
+
+  useEffect(() => {
+    setDatas(searchDatas);
+    console.log(searchDatas);
+  }, [searchDatas]);
+
+  if (datas === null || isLoading)
     return (
       <Columns>
         <LoaderWrapper>
@@ -36,11 +45,23 @@ const Masonry = () => {
       {datas.map((data) => {
         return (
           <Figure>
-            <FigureImg src={data.webImage.url} effect='blur' />
+            <FigureImg
+              src={
+                data.webImage === null
+                  ? require('../../images/copyright.png').default
+                  : data.webImage.url
+              }
+              effect='blur'
+            />
             <FigureWrap>
               <Figcaption>
-                {data.title}
+                <FigureH2>{data.title}</FigureH2>
                 <FigureP>{data.principalOrFirstMaker}</FigureP>
+                <FigurePlace>
+                  {data.productionPlaces.length > 0
+                    ? `On Existing in ${data.productionPlaces[0]}`
+                    : 'Unknown'}
+                </FigurePlace>
               </Figcaption>
             </FigureWrap>
           </Figure>
