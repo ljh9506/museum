@@ -1,7 +1,6 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import useFetchData from '../../hooks/fetchData';
+import useFetchData from '../../hooks/useFetchData';
 import {
   Columns,
   Figcaption,
@@ -13,24 +12,11 @@ import {
   Loader,
   LoaderWrapper,
   FigurePlace,
+  ScrollLoaderWrapper,
 } from './styles/masonry';
 
 const Masonry = ({ searchDatas, isLoading }) => {
-  const [datas, setDatas] = useState(null);
-  useEffect(() => {
-    (async () => {
-      window.scrollTo(0, 0);
-      const { data } = await axios.get(
-        'https://www.rijksmuseum.nl/api/nl/collection?key=4CjxqO0N&ps=10',
-      );
-      setDatas(data.artObjects);
-    })();
-  }, []);
-
-  useEffect(() => {
-    setDatas(searchDatas);
-    console.log(searchDatas);
-  }, [searchDatas]);
+  const { datas, scrollDataLoading } = useFetchData(searchDatas);
 
   if (datas === null || isLoading)
     return (
@@ -67,6 +53,11 @@ const Masonry = ({ searchDatas, isLoading }) => {
           </Figure>
         );
       })}
+      <ScrollLoaderWrapper>
+        {scrollDataLoading ? (
+          <Loader loading color='red' scrollDataLoading={scrollDataLoading} />
+        ) : null}
+      </ScrollLoaderWrapper>
     </Columns>
   );
 };

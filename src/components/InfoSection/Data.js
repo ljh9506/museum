@@ -5,11 +5,12 @@ export const homeObjOne = {
   lightTextDesc: true,
   topLine: 'RIJKS Studio',
   headline: 'Now in Rijksstudio',
-  description: 'Get See our masterpieces at home',
+  description:
+    'Discover what’s on at the Rijksmuseum. Here are some of our exciting exhibitions and fun activities you might like.',
   buttonLabel: 'Go',
   imgStart: false,
   img:
-    'https://lh3.googleusercontent.com/mZj-trnVh6jeUDsl1o0a3xNXPat_UOZtKecS4LaZdTLcNoIqtd_yf6beJKCUVzk3NT5SSFeQ-hOzJEOOSV9sg8dHE6VjFjUrGfxwe5Sg=s0',
+    'https://lh3.googleusercontent.com/-gVOOiOLt5E8gqXlbcaNHNz3K0ZE4NH8xckdF3duv5R4GEb4Of_hnO9_739fpmqRFzT1muzdnVfYB20unVpbecwaJQ-a=s0',
   alt: 'Car',
   dark: true,
   primary: true,

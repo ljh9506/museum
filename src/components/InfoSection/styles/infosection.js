@@ -18,6 +18,10 @@ export const InfoWrapper = styled.div`
   padding: 120px 24px;
   justify-content: center;
   padding: ${({ marginClear }) => (marginClear ? '0 24px' : '')};
+
+  @media screen and (max-width: 480px) {
+    padding-bottom: 20px;
+  }
 `;
 
 export const InfoRow = styled.div`
@@ -95,6 +99,7 @@ export const InfoButton = styled(Link)`
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
+  font-size: 18px;
   font-weight: bold;
   transition: 0.2s ease-in-out;
   text-decoration: none;
@@ -114,6 +119,6 @@ export const Img = styled.img`
   width: 100%;
   margin: 0 0 10px 0;
   padding-right: 0;
-  max-height: 600px;
+  max-height: 400px;
   object-fit: cover;
 `;

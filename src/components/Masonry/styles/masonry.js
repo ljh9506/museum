@@ -42,13 +42,15 @@ export const FigureH2 = styled.h2`
 `;
 export const FigureP = styled.p`
   color: #909090;
-  margin: 4px 0;
+  margin-top: 4px;
+  margin-bottom: 8px;
   font-size: 14px;
 `;
 export const FigurePlace = styled.span`
   font-size: 12px;
   background-color: #aaa04d;
-  padding: 2px;
+  padding: 4px;
+  font-weight: bold;
   border-radius: 4px;
 `;
 export const FigureWrap = styled.div`
@@ -73,9 +75,11 @@ export const LoaderWrapper = styled.div`
     min-height: 490px;
   }
 `;
-
-export const Loader = styled(PulseLoader)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const ScrollLoaderWrapper = styled.div`
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
 `;
+export const Loader = styled(PulseLoader)``;
