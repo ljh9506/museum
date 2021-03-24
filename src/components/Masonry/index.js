@@ -30,7 +30,7 @@ const Masonry = ({ searchDatas, isLoading }) => {
     <Columns>
       {datas.map((data) => {
         return (
-          <Figure>
+          <Figure key={data.objectNumber}>
             <FigureImg
               src={
                 data.webImage === null

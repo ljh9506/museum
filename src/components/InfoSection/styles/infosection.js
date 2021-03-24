@@ -13,14 +13,15 @@ export const InfoWrapper = styled.div`
   width: 100%;
   align-items: center;
   max-width: 1100px;
+  padding: 40px;
   margin-right: auto;
   margin-left: auto;
-  padding: 120px 24px;
   justify-content: center;
-  padding: ${({ marginClear }) => (marginClear ? '0 24px' : '')};
+  padding: ${({ marginClear }) => (marginClear ? '40px' : '30px 40px')};
 
   @media screen and (max-width: 480px) {
     padding-bottom: 20px;
+    padding-top: ${({ marginClear }) => (marginClear ? '120px' : '')};
   }
 `;
 
@@ -69,7 +70,7 @@ export const TopLine = styled.p`
 
 export const Heading = styled.h1`
   margin-bottom: 24px;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 1.1;
   font-weight: 600;
   color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#010606')};
@@ -99,7 +100,7 @@ export const InfoButton = styled(Link)`
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   transition: 0.2s ease-in-out;
   text-decoration: none;

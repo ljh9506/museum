@@ -2,9 +2,15 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 export const FooterContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
+  position: relative;
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 770px) {
+    padding-bottom: 0;
+  }
 `;
 export const FooterWrap = styled.div`
-  padding: 48px 24px;
+  padding: 88px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,34 +21,45 @@ export const FooterWrap = styled.div`
 
 export const FooterLinksContainer = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
 
-  @media screen and (max-width: 820px) {
-    padding-top: 32px;
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 `;
 
 export const FooterLinksWrapper = styled.div`
   display: flex;
+  width: 50%;
   @media screen and (max-width: 820px) {
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  @media screen and (max-width: 550px) {
     flex-direction: column;
+    align-items: flex-start;
   }
 `;
 
 export const FooterLinkItems = styled.div`
   display: flex;
+  flex-basis: 50%;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  margin: 16px;
+  margin: 0 16px;
   width: 160px;
   box-sizing: border-box;
   color: #fff;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 550px) {
     margin: 0;
     padding: 10px;
     width: 100%;
+    align-items: flex-start;
   }
 `;
 
@@ -54,12 +71,16 @@ export const FooterLinkTitle = styled.h1`
 export const FooterLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  font-size: 14px;
+  margin-bottom: 1rem;
+  font-size: 18px;
 
   &:hover {
     color: #01bf71;
     transition: 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
   }
 `;
 
@@ -117,5 +138,49 @@ export const SocialIconLink = styled.a`
   &:hover {
     opacity: 1;
     transition: 0.2s ease-in-out;
+  }
+`;
+
+export const VisitorInfoSection = styled.div`
+  width: 100%;
+`;
+export const InfoH2 = styled.h2`
+  color: #fff;
+  font-weight: bold;
+`;
+export const InfoP = styled.p`
+  color: #fff;
+`;
+export const ButtonSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  align-items: flex-end;
+`;
+export const FooterButton = styled.button`
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 18px 64px;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  margin-bottom: 12px;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+    padding: 12px 32px;
   }
 `;

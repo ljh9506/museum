@@ -7,14 +7,15 @@ export const homeObjOne = {
   headline: 'Now in Rijksstudio',
   description:
     'Discover what’s on at the Rijksmuseum. Here are some of our exciting exhibitions and fun activities you might like.',
-  buttonLabel: 'Go',
+  buttonLabel: 'Visit Museum',
   imgStart: false,
   img:
-    'https://lh3.googleusercontent.com/-gVOOiOLt5E8gqXlbcaNHNz3K0ZE4NH8xckdF3duv5R4GEb4Of_hnO9_739fpmqRFzT1muzdnVfYB20unVpbecwaJQ-a=s0',
+    'https://lh3.googleusercontent.com/cRtF3WdYfRQEraAcQz8dWDJOq3XsRX-h244rOw6zwkHtxy7NHjJOany7u4I2EG_uMAfNwBLHkFyLMENzpmfBTSYXIH_F=s0',
   alt: 'Car',
   dark: true,
   primary: true,
   darkText: false,
+  marginClear: true,
 };
 
 export const homeObjTwo = {
@@ -26,7 +27,7 @@ export const homeObjTwo = {
   headline: 'The Rijksmuseum is there for everyone.',
   description:
     'Support us as a private individual, company or family foundation',
-  buttonLabel: 'Visit',
+  buttonLabel: 'Donate today',
   imgStart: true,
   img:
     'https://lh3.googleusercontent.com/mAyAjvYjIeAIlByhJx1Huctgeb58y7519XYP38oL1FXarhVlcXW7kxuwayOCFdnwtOp6B6F0HJmmws-Ceo5b_pNSSQs=s0',
@@ -34,5 +35,4 @@ export const homeObjTwo = {
   dark: true,
   primary: true,
   darkText: false,
-  marginClear: true,
 };

@@ -1,6 +1,13 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import {
+  HeroLogos,
+  HeroLogosA,
+  HeroLogosImg,
+  HeroLogosSection,
+  HeroMainLogosImg,
+} from '../HeroSection/styles/herosection';
+import {
   FooterContainer,
   FooterLink,
   FooterLinkItems,
@@ -14,49 +21,56 @@ import {
   SocialMedia,
   SocialMediaWrap,
   WebsiteRights,
+  VisitorInfoSection,
+  InfoH2,
+  InfoP,
+  ButtonSection,
+  FooterButton,
 } from './styles/footer';
 
 const Footer = () => {
   return (
     <FooterContainer>
+      <HeroLogos>
+        <HeroLogosSection>
+          <HeroMainLogosImg src={require('../../images/logo1.svg').default} />
+        </HeroLogosSection>
+        <HeroLogosSection>
+          <HeroLogosA>Founder</HeroLogosA>
+          <HeroLogosImg src={require('../../images/philips.svg').default} />
+        </HeroLogosSection>
+        <HeroLogosSection>
+          <HeroLogosA>Main Sponsor</HeroLogosA>
+          <HeroLogosImg src={require('../../images/bgl.svg').default} />
+        </HeroLogosSection>
+        <HeroLogosSection>
+          <HeroLogosImg src={require('../../images/ing.svg').default} />
+        </HeroLogosSection>
+        <HeroLogosSection>
+          <HeroLogosImg src={require('../../images/kpn.svg').default} />
+        </HeroLogosSection>
+      </HeroLogos>
+
       <FooterWrap>
         <FooterLinksContainer>
           <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to='/signin'>How it works</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to='/signin'>How it works</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-            </FooterLinkItems>
+            <VisitorInfoSection>
+              <InfoH2>VISITOR INFORMATION</InfoH2>
+              <InfoP>Closed until 30 March</InfoP>
+            </VisitorInfoSection>
           </FooterLinksWrapper>
 
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to='/signin'>How it works</FooterLink>
               <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
+              <FooterLink to='/signin'>Press</FooterLink>
+              <FooterLink to='/signin'>Careers</FooterLink>
+              <FooterLink to='/signin'>Contact</FooterLink>
             </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to='/signin'>How it works</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>About us</FooterLink>
-            </FooterLinkItems>
+            <ButtonSection>
+              <FooterButton>Donate today</FooterButton>
+              <FooterButton>Newsletter</FooterButton>
+            </ButtonSection>
           </FooterLinksWrapper>
         </FooterLinksContainer>
         <SocialMedia>

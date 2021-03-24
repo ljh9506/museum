@@ -77,7 +77,7 @@ export const LoaderWrapper = styled.div`
 `;
 export const ScrollLoaderWrapper = styled.div`
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   margin: 0 auto;

@@ -5,13 +5,13 @@ const useFetchData = (searchDatas) => {
   const [datas, setDatas] = useState(null);
   const [fetching, setFetching] = useState(false);
   const [scrollDataLoading, setScrollDataLoading] = useState(false);
-  const fetchNum = useRef(0);
+  const fetchNum = useRef(4);
 
   useEffect(() => {
     (async () => {
       window.scrollTo(0, 0);
       const { data } = await axios.get(
-        `https://www.rijksmuseum.nl/api/nl/collection?key=4CjxqO0N&p=${fetchNum.current}`,
+        `https://www.rijksmuseum.nl/api/en/collection?key=4CjxqO0N&p=${fetchNum.current}`,
       );
       setDatas(data.artObjects);
     })();
@@ -19,7 +19,6 @@ const useFetchData = (searchDatas) => {
 
   useEffect(() => {
     setDatas(searchDatas);
-    console.log(searchDatas);
   }, [searchDatas]);
 
   const fetchMoreDatas = useCallback(async () => {
@@ -28,7 +27,7 @@ const useFetchData = (searchDatas) => {
     fetchNum.current++;
 
     const newDatas = await axios.get(
-      `https://www.rijksmuseum.nl/api/nl/collection?key=4CjxqO0N&p=${fetchNum.current}`,
+      `https://www.rijksmuseum.nl/api/en/collection?key=4CjxqO0N&p=${fetchNum.current}`,
     );
     const fetchedDatas = newDatas.data.artObjects;
     const mergedData = datas.concat(...fetchedDatas);
@@ -41,7 +40,6 @@ const useFetchData = (searchDatas) => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
-    console.log(scrollTop, clientHeight, scrollHeight);
     if (
       scrollTop + clientHeight + 100 >= scrollHeight &&
       fetching === false &&
