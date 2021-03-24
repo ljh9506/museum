@@ -44,6 +44,7 @@ export const ServicesCard = styled.div`
   &:hover {
     /* transform: scale(1.02); */
     transition: 0.2s ease-in-out;
+    cursor: pointer;
   }
 `;
 
@@ -70,6 +71,8 @@ export const ServicesSubCard = styled.div`
   }
 `;
 
+export const Picture = styled.picture``;
+
 export const ServicessIcon = styled.img`
   position: relative;
   display: block;
@@ -81,6 +84,7 @@ export const ServicessIcon = styled.img`
 
   @media screen and (max-width: 480px) {
     height: 66vh;
+    background-image
   }
 `;
 
@@ -116,6 +120,7 @@ export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
+  align-items: flex-start;
   bottom: 60px;
   left: 60px;
 
@@ -132,4 +137,8 @@ export const CardContentH2 = styled.h2`
 export const CardContentP = styled.p`
   color: #fff;
   margin-top: 12px;
+`;
+
+export const CarouselItem = styled.div`
+  user-select: none;
 `;
