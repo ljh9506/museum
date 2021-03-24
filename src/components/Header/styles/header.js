@@ -94,13 +94,12 @@ export const NavBtn = styled.nav`
   }
 `;
 export const NavBtnLink = styled(LinkR)`
-  border-radius: 50px;
-  background: #01bf71;
+  border-radius: 2px;
+  background: #d55140;
   white-space: nowrap;
-  padding: 10px 22px;
-  color: #010606;
+  padding: 12px 22px;
+  color: #fff;
   font-size: 16px;
-  font-weight: bold;
   outline: none;
   border: none;
   cursor: pointer;

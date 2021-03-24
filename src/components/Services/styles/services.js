@@ -52,10 +52,10 @@ export const ServicesSubCard = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 66vh;
+  max-height: 80vh;
+  overflow: hidden;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 10px;
   transition: all 0.4s ease-in-out;
 
   background-image: linear-gradient(
@@ -63,12 +63,6 @@ export const ServicesSubCard = styled.div`
     transparent 100%,
     rgba(32, 35, 39, 1)
   );
-
-  &:hover {
-    transform: scale(1.02);
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-  }
 `;
 
 export const Picture = styled.picture``;
@@ -76,15 +70,19 @@ export const Picture = styled.picture``;
 export const ServicessIcon = styled.img`
   position: relative;
   display: block;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   object-fit: cover;
+  transition: 0.5s ease-in-out;
 
   filter: brightness(80%);
-
+  &:hover {
+    transform: scale(1.02);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
   @media screen and (max-width: 480px) {
     height: 66vh;
-    background-image
   }
 `;
 
@@ -121,8 +119,8 @@ export const CardContent = styled.div`
   flex-direction: column;
   position: absolute;
   align-items: flex-start;
-  bottom: 60px;
-  left: 60px;
+  bottom: 65px;
+  left: 85px;
 
   @media screen and (max-width: 480px) {
     bottom: 40px;

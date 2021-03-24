@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import useFetchData from '../../hooks/useFetchData';
 import {
@@ -30,27 +31,29 @@ const Masonry = ({ searchDatas, isLoading }) => {
     <Columns>
       {datas.map((data) => {
         return (
-          <Figure key={data.objectNumber}>
-            <FigureImg
-              src={
-                data.webImage === null
-                  ? require('../../images/copyright.png').default
-                  : data.webImage.url
-              }
-              effect='blur'
-            />
-            <FigureWrap>
-              <Figcaption>
-                <FigureH2>{data.title}</FigureH2>
-                <FigureP>{data.principalOrFirstMaker}</FigureP>
-                <FigurePlace>
-                  {data.productionPlaces.length > 0
-                    ? `On Existing in ${data.productionPlaces[0]}`
-                    : 'Unknown'}
-                </FigurePlace>
-              </Figcaption>
-            </FigureWrap>
-          </Figure>
+          <Link to={`/studio/${data.objectNumber}`}>
+            <Figure key={data.objectNumber}>
+              <FigureImg
+                src={
+                  data.webImage === null
+                    ? require('../../images/copyright.png').default
+                    : data.webImage.url
+                }
+                effect='blur'
+              />
+              <FigureWrap>
+                <Figcaption>
+                  <FigureH2>{data.title}</FigureH2>
+                  <FigureP>{data.principalOrFirstMaker}</FigureP>
+                  <FigurePlace>
+                    {data.productionPlaces.length > 0
+                      ? `On Existing in ${data.productionPlaces[0]}`
+                      : 'Unknown'}
+                  </FigurePlace>
+                </Figcaption>
+              </FigureWrap>
+            </Figure>
+          </Link>
         );
       })}
       <ScrollLoaderWrapper>

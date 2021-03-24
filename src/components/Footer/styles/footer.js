@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export const FooterContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 
   @media screen and (max-width: 770px) {
     padding-bottom: 0;
@@ -39,7 +39,7 @@ export const FooterLinksWrapper = styled.div`
     margin-top: 30px;
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 720px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -55,7 +55,7 @@ export const FooterLinkItems = styled.div`
   box-sizing: border-box;
   color: #fff;
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 720px) {
     margin: 0;
     padding: 10px;
     width: 100%;
@@ -147,6 +147,7 @@ export const VisitorInfoSection = styled.div`
 export const InfoH2 = styled.h2`
   color: #fff;
   font-weight: bold;
+  margin-bottom: 12px;
 `;
 export const InfoP = styled.p`
   color: #fff;

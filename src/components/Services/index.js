@@ -31,7 +31,8 @@ const Services = () => {
             showIndicators={false}
             showStatus={false}
             showThumbs={false}
-            swipeable>
+            swipeable
+            infiniteLoop>
             <CarouselItem>
               <ServicessIcon src={Highlight1} />
               <CardContent>
