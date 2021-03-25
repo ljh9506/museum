@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Collection from '../Collection';
 import {
   ButtonWrap,
   Description,
@@ -28,7 +29,7 @@ import {
 
 const Details = ({ params }) => {
   const instance = axios.create({
-    baseURL: `https://www.rijksmuseum.nl/api/nl/collection/${params.id}?key=4CjxqO0N`,
+    baseURL: `https://www.rijksmuseum.nl/api/en/collection/${params.id}?key=4CjxqO0N`,
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
       'Access-Control-Allow-Origin': '*',
@@ -92,6 +93,8 @@ const Details = ({ params }) => {
           </RightInfo>
         </DetailsInfoWrapper>
       </DetailsInfoSection>
+
+      <Collection />
     </>
   );
 };
