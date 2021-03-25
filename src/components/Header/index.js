@@ -16,7 +16,7 @@ const Header = ({ toggle }) => {
   return (
     <Nav>
       <Container>
-        <Logo to='/'>Museum</Logo>
+        <Logo to='/museum'>Museum</Logo>
         <MobileIcon onClick={toggle}>
           <FaBars />
         </MobileIcon>

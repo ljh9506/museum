@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 export const FooterContainer = styled.div`
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #242323;
   position: relative;
   padding-bottom: 80px;
 

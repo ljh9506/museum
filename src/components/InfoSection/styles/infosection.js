@@ -21,7 +21,7 @@ export const InfoWrapper = styled.div`
 
   @media screen and (max-width: 480px) {
     padding-bottom: 20px;
-    padding-top: ${({ marginClear }) => (marginClear ? '120px' : '')};
+    padding-top: 0;
   }
 `;
 

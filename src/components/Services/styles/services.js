@@ -83,6 +83,10 @@ export const ServicessIcon = styled.img`
   }
   @media screen and (max-width: 480px) {
     height: 66vh;
+
+    &:hover {
+      transform: none;
+    }
   }
 `;
 

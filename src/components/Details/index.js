@@ -22,19 +22,36 @@ import {
   VideoP,
   VideoIcon,
   VideoImgWrap,
+  LoaderWrapper,
+  Loader,
 } from './styles/details';
 
 const Details = ({ params }) => {
+  const instance = axios.create({
+    baseURL: `https://www.rijksmuseum.nl/api/nl/collection/${params.id}?key=4CjxqO0N`,
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+    },
+  });
+
   const [datas, setDatas] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get(
-        `https://www.rijksmuseum.nl/api/nl/collection/${params.id}?key=4CjxqO0N`,
-      );
+      window.scrollTo(0, 0);
+      setIsLoading(true);
+      const { data } = await instance.get();
       setDatas(data.artObject);
+      setIsLoading(false);
     })();
-  }, [params]);
-  if (datas === null) return <h1>Fuck</h1>;
+  }, []);
+  if (datas === null)
+    return (
+      <LoaderWrapper>
+        <Loader isLoading={isLoading} />
+      </LoaderWrapper>
+    );
   return (
     <>
       <DetailsBgContainer>

@@ -1,14 +1,19 @@
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { FaPlayCircle } from 'react-icons/fa';
+import { PulseLoader } from 'react-spinners';
 
 export const DetailsBgContainer = styled.div`
-  background: #0c0c0c;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 30px;
   height: 640px;
   z-index: 1;
+
+  @media screen and (max-width: 480px) {
+    height: 89vh;
+  }
 `;
 
 export const DetailsBg = styled.div`
@@ -18,7 +23,7 @@ export const DetailsBg = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 `;
 
 export const DetailsImg = styled.img`
@@ -64,6 +69,8 @@ export const LeftInfo = styled.div`
 
   @media screen and (max-width: 750px) {
     width: 100%;
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 export const RightInfo = styled.div`
@@ -220,3 +227,12 @@ export const VideoIcon = styled(FaPlayCircle)`
   opacity: 0.7;
   color: #fff;
 `;
+
+export const LoaderWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+`;
+export const Loader = styled(PulseLoader)``;

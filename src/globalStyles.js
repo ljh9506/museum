@@ -7,8 +7,9 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Encode Sans Expanded', sans-serif;
     };
-
-            font-size: 24px !important;
+    html , body {
+        background-color: #242323;
+    }
 .carousel .control-next.control-arrow:before {
     border-left: 24px solid #fff !important;
 }

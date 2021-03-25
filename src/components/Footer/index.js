@@ -13,7 +13,6 @@ import {
   FooterLinkItems,
   FooterLinksContainer,
   FooterLinksWrapper,
-  FooterLinkTitle,
   FooterWrap,
   SocialIconLink,
   SocialIcons,

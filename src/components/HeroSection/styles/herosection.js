@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -9,6 +10,10 @@ export const HeroContainer = styled.div`
   padding: 0 30px;
   height: 640px;
   z-index: 1;
+
+  @media screen and (max-width: 480px) {
+    height: 89vh;
+  }
 `;
 
 export const HeroBg = styled.div`
@@ -96,7 +101,7 @@ export const HeroBtnWrapper = styled.div`
   align-items: center;
 `;
 
-export const HeroBtn = styled.button`
+export const HeroBtn = styled(Link)`
   border: none;
   outline: none;
   display: flex;
@@ -109,6 +114,8 @@ export const HeroBtn = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  color: #000;
+  text-decoration: none;
 
   &:hover {
     background-color: #fff;

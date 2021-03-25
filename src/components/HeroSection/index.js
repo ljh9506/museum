@@ -54,7 +54,7 @@ const HeroSection = () => {
           <HeroSpan>FROM HOME</HeroSpan> We bring the museum to You
         </HeroP>
         <HeroBtnWrapper>
-          <HeroBtn onMouseEnter={onHover} onMouseLeave={onHover}>
+          <HeroBtn to='/studio' onMouseEnter={onHover} onMouseLeave={onHover}>
             See Arts {hover ? <ArrowForward /> : <ArrowRight />}
           </HeroBtn>
         </HeroBtnWrapper>
