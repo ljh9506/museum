@@ -64,12 +64,10 @@ export const ContentImgWrap = styled.div`
 
 export const ContentImg = styled.img`
   display: block;
-  width: 100%;
   max-width: 190px;
   margin-right: 5px;
 
   @media screen and (max-width: 480px) {
-    height: 100%;
   }
 `;
 
