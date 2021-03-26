@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/museum/static/js/main.c5db991d.chunk.js",
-    "main.js.map": "/museum/static/js/main.c5db991d.chunk.js.map",
+    "main.js": "/museum/static/js/main.4866f703.chunk.js",
+    "main.js.map": "/museum/static/js/main.4866f703.chunk.js.map",
     "runtime-main.js": "/museum/static/js/runtime-main.bda6f587.js",
     "runtime-main.js.map": "/museum/static/js/runtime-main.bda6f587.js.map",
     "static/css/2.0ab43e63.chunk.css": "/museum/static/css/2.0ab43e63.chunk.css",
@@ -18,9 +18,8 @@
     "static/media/col1.jpg": "/museum/static/media/col1.b923415b.jpg",
     "static/media/col2-1.jpg": "/museum/static/media/col2-1.6b1ec6cc.jpg",
     "static/media/col2.jpg": "/museum/static/media/col2.774e73ae.jpg",
-    "static/media/col3-1.jpg": "/museum/static/media/col3-1.0168d731.jpg",
-    "static/media/col3-2.jpg": "/museum/static/media/col3-2.f48f2d26.jpg",
-    "static/media/col3.jpg": "/museum/static/media/col3.23fe76dc.jpg",
+    "static/media/col3-2.jpg": "/museum/static/media/col3-2.fe00b84e.jpg",
+    "static/media/col3.jpg": "/museum/static/media/col3.086b4670.jpg",
     "static/media/copyright.png": "/museum/static/media/copyright.6c5435c7.png",
     "static/media/ing.svg": "/museum/static/media/ing.00d3be2a.svg",
     "static/media/kpn.svg": "/museum/static/media/kpn.86f8b8c6.svg",
@@ -38,6 +37,6 @@
     "static/js/runtime-main.bda6f587.js",
     "static/css/2.0ab43e63.chunk.css",
     "static/js/2.9fa5d227.chunk.js",
-    "static/js/main.c5db991d.chunk.js"
+    "static/js/main.4866f703.chunk.js"
   ]
 }
