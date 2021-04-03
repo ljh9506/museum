@@ -34,9 +34,7 @@ const Details = ({ params }) => {
     (async () => {
       window.scrollTo(0, 0);
       setIsLoading(true);
-      const { data } = await axios.get(
-        `https://www.rijksmuseum.nl/api/en/collection/${params.id}?key=4CjxqO0N`,
-      );
+      const { data } = await axios.get(`/collection/${params.id}?key=4CjxqO0N`);
       setDatas(data.artObject);
       setIsLoading(false);
     })();

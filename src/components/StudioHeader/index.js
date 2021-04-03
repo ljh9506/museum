@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   HeaderContainer,
   HeaderImg,
@@ -35,9 +34,7 @@ const StudioHeader = ({ children, setIsLoading, setSearchDatas }) => {
     async (e) => {
       e.preventDefault();
       setIsLoading(true);
-      const { data } = await axios.get(
-        `https://www.rijksmuseum.nl/api/nl/collection?key=4CjxqO0N&q=${query}`,
-      );
+      const { data } = await axios.get(`/collection?key=4CjxqO0N&q=${query}`);
       console.log(data.artObjects);
       setSearchDatas(data.artObjects);
       setIsLoading(false);
@@ -50,13 +47,10 @@ const StudioHeader = ({ children, setIsLoading, setSearchDatas }) => {
       clearTimeout(timerId.current);
     }
     timerId.current = setTimeout(async () => {
-      const { data } = await axios.get(
-        `https://www.rijksmuseum.nl/api/nl/collection?key=4CjxqO0N&q=${query}`,
-      );
+      const { data } = await axios.get(`/collection?key=4CjxqO0N&q=${query}`);
       if (query === '') return;
       setAutocompleteData(data.artObjects);
     }, 500);
-    console.log(autocompleteData);
   }, [query]);
   return (
     <>

@@ -11,7 +11,7 @@ const useFetchData = (searchDatas) => {
     (async () => {
       window.scrollTo(0, 0);
       const { data } = await axios.get(
-        `https://www.rijksmuseum.nl/api/en/collection?key=4CjxqO0N&p=${fetchNum.current}`,
+        `/collection?key=4CjxqO0N&p=${fetchNum.current}`,
       );
       setDatas(data.artObjects);
     })();
@@ -27,7 +27,7 @@ const useFetchData = (searchDatas) => {
     fetchNum.current++;
 
     const newDatas = await axios.get(
-      `https://www.rijksmuseum.nl/api/en/collection?key=4CjxqO0N&p=${fetchNum.current}`,
+      `/collection?key=4CjxqO0N&p=${fetchNum.current}`,
     );
     const fetchedDatas = newDatas.data.artObjects;
     const mergedData = datas.concat(...fetchedDatas);

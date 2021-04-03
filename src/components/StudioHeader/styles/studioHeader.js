@@ -112,7 +112,10 @@ export const AutoCompleteLi = styled.li`
   width: 100%;
   list-style: none;
   background-color: #fff;
-  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 6px 40px;
   height: 100px;
   border-bottom: 1px solid gray;
 
