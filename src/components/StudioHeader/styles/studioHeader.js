@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 export const HeaderContainer = styled.div`
   position: absolute;
   top: 0;
@@ -62,6 +63,13 @@ export const SearchFormWrap = styled.div`
   display: flex;
 `;
 
+export const InputWrap = styled.div`
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+`;
+
 export const SearchInput = styled.input`
   height: 40px;
   width: 100%;
@@ -69,6 +77,72 @@ export const SearchInput = styled.input`
   &:focus {
     outline: none;
   }
+`;
+
+export const AutoCompleteWrap = styled.ul`
+  display: ${({ autocompleteData }) =>
+    autocompleteData.length > 0 ? 'flex' : 'none'};
+  flex-direction: column;
+  position: absolute;
+  max-height: 200px;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+
+  @media screen and (max-width: 480px) {
+    left: 0;
+    right: 0;
+  }
+`;
+
+export const AutoLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+`;
+
+export const AutoCompleteLi = styled.li`
+  width: 100%;
+  list-style: none;
+  background-color: #fff;
+  padding: 12px 40px;
+  height: 100px;
+  border-bottom: 1px solid gray;
+
+  &:hover {
+    background-color: #808080;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 12px;
+  }
+`;
+
+export const ArtObjWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ArtImg = styled.img`
+  max-width: 80px;
+  max-height: 80px;
+  margin-right: 10px;
+`;
+
+export const ArtTitle = styled.span`
+  font-size: 14px;
+  overflow: hidden;
+  font-weight: bold;
+  white-space: nowrap;
 `;
 
 export const SearchButton = styled.button`

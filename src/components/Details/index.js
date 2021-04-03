@@ -28,25 +28,19 @@ import {
 } from './styles/details';
 
 const Details = ({ params }) => {
-  const instance = axios.create({
-    baseURL: `https://www.rijksmuseum.nl/api/en/collection/${params.id}?key=4CjxqO0N`,
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      'Access-Control-Allow-Origin': '*',
-    },
-  });
-
   const [datas, setDatas] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     (async () => {
       window.scrollTo(0, 0);
       setIsLoading(true);
-      const { data } = await instance.get();
+      const { data } = await axios.get(
+        `https://www.rijksmuseum.nl/api/en/collection/${params.id}?key=4CjxqO0N`,
+      );
       setDatas(data.artObject);
       setIsLoading(false);
     })();
-  }, []);
+  }, [params]);
   if (datas === null)
     return (
       <LoaderWrapper>
@@ -57,7 +51,13 @@ const Details = ({ params }) => {
     <>
       <DetailsBgContainer>
         <DetailsBg>
-          <DetailsImg src={datas.webImage.url} />
+          <DetailsImg
+            src={
+              datas.webImage === null
+                ? require('../../images/copyright.png').default
+                : datas.webImage.url
+            }
+          />
         </DetailsBg>
       </DetailsBgContainer>
       <DetailsInfoSection>
@@ -83,7 +83,13 @@ const Details = ({ params }) => {
             <DownloadImg>Download Image</DownloadImg>
             <VideoWrap>
               <VideoImgWrap>
-                <VideoImg src={datas.webImage.url} />
+                <VideoImg
+                  src={
+                    datas.webImage === null
+                      ? require('../../images/copyright.png').default
+                      : datas.webImage.url
+                  }
+                />
                 <VideoIcon />
               </VideoImgWrap>
               <VideoP>

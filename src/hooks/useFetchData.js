@@ -41,7 +41,7 @@ const useFetchData = (searchDatas) => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
     if (
-      scrollTop + clientHeight + 100 >= scrollHeight &&
+      scrollTop + clientHeight + 416 >= scrollHeight &&
       fetching === false &&
       datas !== null
     ) {

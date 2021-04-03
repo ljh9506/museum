@@ -71,6 +71,7 @@ export const LeftInfo = styled.div`
     width: 100%;
   }
   @media screen and (max-width: 480px) {
+    padding: 0 10px;
   }
 `;
 export const RightInfo = styled.div`
@@ -82,6 +83,9 @@ export const RightInfo = styled.div`
 
   @media screen and (max-width: 750px) {
     width: 100%;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 0 10px;
   }
 `;
 

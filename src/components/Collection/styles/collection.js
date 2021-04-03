@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
 
 export const CollectionSection = styled.div`
   display: flex;
@@ -71,11 +72,25 @@ export const ContentImg = styled.img`
   }
 `;
 
-export const ContentSubImg = styled.img`
+export const ContentSubImg1 = styled.img`
+  display: block;
+  width: 95px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 5px;
+
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+  @media screen and (max-width: 480px) {
+    display: block;
+  }
+`;
+
+export const ContentSubImg2 = styled.img`
   display: block;
   width: 95px;
   height: 95px;
-  margin-bottom: 5px;
   object-fit: cover;
 
   @media screen and (max-width: 1050px) {
@@ -85,6 +100,7 @@ export const ContentSubImg = styled.img`
     display: block;
   }
 `;
+
 export const SubImgWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -106,4 +122,9 @@ export const ContentP = styled.p`
   @media screen and (max-width: 850px) {
     font-size: 12px;
   }
+`;
+export const LinkR = styled(Link)`
+  display: flex;
+  height: 100%;
+  max-height: 200px;
 `;

@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Encode Sans Expanded', sans-serif;
 };
 
-html,body {
+body {
         background-color: #242323;
 }
 

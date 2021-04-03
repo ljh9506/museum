@@ -22,6 +22,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Services = () => {
+  const html = document.getElementsByTagName('html');
   const body = document.getElementsByTagName('body');
   return (
     <ServicesContainer>
@@ -34,8 +35,14 @@ const Services = () => {
             showThumbs={false}
             swipeable
             infiniteLoop
-            onSwipeStart={() => body[0].classList.add('.stop-scrolling')}
-            onSwipeEnd={() => body[0].classList.remove('.stop-scrolling')}>
+            onSwipeStart={() => {
+              html[0].classList.add('.stop-scrolling');
+              body[0].classList.add('.stop-scrolling');
+            }}
+            onSwipeEnd={() => {
+              html[0].classList.remove('.stop-scrolling');
+              body[0].classList.remove('.stop-scrolling');
+            }}>
             <CarouselItem>
               <ServicessIcon src={Highlight1} />
               <CardContent>

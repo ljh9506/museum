@@ -31,8 +31,8 @@ const Masonry = ({ searchDatas, isLoading }) => {
     <Columns>
       {datas.map((data) => {
         return (
-          <Link to={`/studio/${data.objectNumber}`}>
-            <Figure key={data.objectNumber}>
+          <Link to={`/studio/${data.objectNumber}`} key={data.objectNumber}>
+            <Figure>
               <FigureImg
                 src={
                   data.webImage === null

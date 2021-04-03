@@ -10,8 +10,10 @@ import {
   ContentImgWrap,
   ContentP,
   ContentWrap,
-  ContentSubImg,
+  ContentSubImg1,
+  ContentSubImg2,
   SubImgWrap,
+  LinkR,
 } from './styles/collection';
 
 const Collection = () => {
@@ -23,14 +25,20 @@ const Collection = () => {
           <ContentWrap>
             <Content>
               <ContentImgWrap>
-                <ContentImg src={require('../../images/col1.jpg').default} />
+                <LinkR to='/studio/SK-A-1328'>
+                  <ContentImg src={require('../../images/col1.jpg').default} />
+                </LinkR>
                 <SubImgWrap>
-                  <ContentSubImg
-                    src={require('../../images/col1-1.jpg').default}
-                  />
-                  <ContentSubImg
-                    src={require('../../images/col1-2.jpg').default}
-                  />
+                  <LinkR to='/studio/SK-A-3580'>
+                    <ContentSubImg1
+                      src={require('../../images/col1-1.jpg').default}
+                    />
+                  </LinkR>
+                  <LinkR to='/studio/SK-A-3584'>
+                    <ContentSubImg2
+                      src={require('../../images/col1-2.jpg').default}
+                    />
+                  </LinkR>
                 </SubImgWrap>
               </ContentImgWrap>
               <ContentH3>George Hendrik Breitner</ContentH3>
@@ -38,14 +46,20 @@ const Collection = () => {
             </Content>
             <Content>
               <ContentImgWrap>
-                <ContentImg src={require('../../images/col2.jpg').default} />
+                <LinkR to='/studio/SK-A-91'>
+                  <ContentImg src={require('../../images/col2.jpg').default} />
+                </LinkR>
                 <SubImgWrap>
-                  <ContentSubImg
-                    src={require('../../images/col2-1.jpg').default}
-                  />
-                  <ContentSubImg
-                    src={require('../../images/col2-2.jpg').default}
-                  />
+                  <LinkR to='/studio/RP-P-OB-1841'>
+                    <ContentSubImg1
+                      src={require('../../images/col2-1.jpg').default}
+                    />
+                  </LinkR>
+                  <LinkR to='/studio/BK-LXXXVII-C'>
+                    <ContentSubImg2
+                      src={require('../../images/col2-2.jpg').default}
+                    />
+                  </LinkR>
                 </SubImgWrap>
               </ContentImgWrap>
               <ContentH3>George Hendrik Breitner</ContentH3>
@@ -53,14 +67,21 @@ const Collection = () => {
             </Content>
             <Content>
               <ContentImgWrap>
-                <ContentImg src={require('../../images/col3.jpg').default} />
+                <LinkR to='/studio/SK-A-135'>
+                  <ContentImg src={require('../../images/col3.jpg').default} />
+                </LinkR>
+
                 <SubImgWrap>
-                  <ContentSubImg
-                    src={require('../../images/col3-1.jpg').default}
-                  />
-                  <ContentSubImg
-                    src={require('../../images/col3-2.jpg').default}
-                  />
+                  <LinkR to='/studio/SK-C-6'>
+                    <ContentSubImg1
+                      src={require('../../images/col3-1.jpg').default}
+                    />
+                  </LinkR>
+                  <LinkR to='/studio/SK-C-216'>
+                    <ContentSubImg2
+                      src={require('../../images/col3-2.jpg').default}
+                    />
+                  </LinkR>
                 </SubImgWrap>
               </ContentImgWrap>
               <ContentH3>George Hendrik Breitner</ContentH3>

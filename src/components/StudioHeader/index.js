@@ -1,4 +1,6 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   HeaderContainer,
   HeaderImg,
@@ -12,9 +14,50 @@ import {
   SearchButtonWrap,
   Icon,
   SearchFormWrap,
+  InputWrap,
+  AutoCompleteWrap,
+  AutoCompleteLi,
+  ArtObjWrap,
+  ArtImg,
+  ArtTitle,
+  AutoLink,
 } from './styles/studioHeader';
 
-const StudioHeader = ({ children, searchChange, searchHandler, query }) => {
+const StudioHeader = ({ children, setIsLoading, setSearchDatas }) => {
+  const [query, setQuery] = useState('');
+  const [autocompleteData, setAutocompleteData] = useState([]);
+  const searchChange = (e) => {
+    setQuery(e.target.value);
+  };
+  const timerId = useRef(null);
+
+  const searchHandler = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setIsLoading(true);
+      const { data } = await axios.get(
+        `https://www.rijksmuseum.nl/api/nl/collection?key=4CjxqO0N&q=${query}`,
+      );
+      console.log(data.artObjects);
+      setSearchDatas(data.artObjects);
+      setIsLoading(false);
+    },
+    [query, setIsLoading, setSearchDatas],
+  );
+  useEffect(() => {
+    setAutocompleteData([]);
+    if (timerId.current) {
+      clearTimeout(timerId.current);
+    }
+    timerId.current = setTimeout(async () => {
+      const { data } = await axios.get(
+        `https://www.rijksmuseum.nl/api/nl/collection?key=4CjxqO0N&q=${query}`,
+      );
+      if (query === '') return;
+      setAutocompleteData(data.artObjects);
+    }, 500);
+    console.log(autocompleteData);
+  }, [query]);
   return (
     <>
       <HeaderContainer>
@@ -26,7 +69,32 @@ const StudioHeader = ({ children, searchChange, searchHandler, query }) => {
           <SearchWrap>
             <SearchForm onSubmit={searchHandler}>
               <SearchFormWrap>
-                <SearchInput value={query} onChange={searchChange} />
+                <InputWrap>
+                  <SearchInput value={query} onChange={searchChange} />
+                  <AutoCompleteWrap autocompleteData={autocompleteData}>
+                    {!autocompleteData
+                      ? null
+                      : autocompleteData.map((value) => (
+                          <AutoLink
+                            to={`/studio/${value.objectNumber}`}
+                            key={value.objectNumber}>
+                            <AutoCompleteLi>
+                              <ArtObjWrap>
+                                <ArtImg
+                                  src={
+                                    value.webImage === null
+                                      ? require('../../images/copyright.png')
+                                          .default
+                                      : value.webImage.url
+                                  }
+                                />
+                                <ArtTitle>{value.title}</ArtTitle>
+                              </ArtObjWrap>
+                            </AutoCompleteLi>
+                          </AutoLink>
+                        ))}
+                  </AutoCompleteWrap>
+                </InputWrap>
                 <SearchButtonWrap>
                   <SearchButton type='submit'>
                     <Icon />

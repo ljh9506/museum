@@ -8,12 +8,9 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 640px;
-  z-index: 1;
+  height: calc(100vh - 80px);
 
-  @media screen and (max-width: 480px) {
-    height: 89vh;
-  }
+  z-index: 1;
 `;
 
 export const HeroBg = styled.div`
